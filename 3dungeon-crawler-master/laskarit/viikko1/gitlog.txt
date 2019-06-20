@@ -1,0 +1,117 @@
+commit 42f0d0058f0c57ea3207125bafcc41e4c4b0f582
+Author: sofivanhanen <sofia.vanhanen0@gmail.com>
+Date:   Mon Mar 19 15:10:32 2018 +0200
+
+    asd
+
+ tiedostoja/file1  | 0
+ tiedostoja/file2  | 0
+ tiedostoja/file22 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 7787f89dc6454f18340c14fd4ed65392dbf31745
+Author: sofivanhanen <sofia.vanhanen0@gmail.com>
+Date:   Mon Mar 19 15:09:21 2018 +0200
+
+    tiedostoja
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit c6628c298a9f20eec07ec65b03001b2b9b14da0a
+Author: sofivanhanen <sofia.vanhanen0@gmail.com>
+Date:   Mon Mar 19 15:04:23 2018 +0200
+
+    meemimuutoksia
+
+ eka.txt    | 3 ++-
+ kolmas.txt | 2 +-
+ 2 files changed, 3 insertions(+), 2 deletions(-)
+
+commit 7aca8a2ec91ab4fd215b23dfefcce9459b382c51
+Author: sofivanhanen <sofia.vanhanen0@gmail.com>
+Date:   Mon Mar 19 15:02:13 2018 +0200
+
+    uudelleennimeämistapahtuma
+
+ eka.txt      | 5 +++++
+ tiedosto.txt | 5 -----
+ 2 files changed, 5 insertions(+), 5 deletions(-)
+
+commit d523d53024aff089cfeb54107b415bd08384e823
+Author: sofivanhanen <sofia.vanhanen0@gmail.com>
+Date:   Mon Mar 19 15:00:38 2018 +0200
+
+    poista toinen
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 79d7c0998c4f78b2899be8c153decf7f117d5870
+Author: sofivanhanen <sofia.vanhanen0@gmail.com>
+Date:   Mon Mar 19 14:58:26 2018 +0200
+
+    muutosmuutos
+
+ tiedosto.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit fd0330cc42ffcc6215b377344488f7282bf3e9ad
+Author: sofivanhanen <sofia.vanhanen0@gmail.com>
+Date:   Mon Mar 19 14:57:41 2018 +0200
+
+    paljon tekstiä
+
+ tiedosto.txt | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit 5ec720722e7c4606f93b0f0dad780523df983f54
+Author: sofivanhanen <sofia.vanhanen0@gmail.com>
+Date:   Mon Mar 19 14:54:39 2018 +0200
+
+    stuff
+
+ stuff/asd.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 6c8d41168a4035020270307728d4e5b9825e4d55
+Author: sofivanhanen <sofia.vanhanen0@gmail.com>
+Date:   Mon Mar 19 14:53:48 2018 +0200
+
+    kolmatta ja toista muutettu
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit 8fbe945c7f6e7bd0f6460138c41b9b2ceab0801e
+Author: sofivanhanen <sofia.vanhanen0@gmail.com>
+Date:   Mon Mar 19 14:53:04 2018 +0200
+
+    kolmas
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 7d507db58c726ca877606e5c027a9da6f1a6c767
+Author: sofivanhanen <sofia.vanhanen0@gmail.com>
+Date:   Mon Mar 19 14:51:03 2018 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit 1765947dbf9536980cab11f5b4a4bca23e9a8c43
+Author: sofivanhanen <sofia.vanhanen0@gmail.com>
+Date:   Mon Mar 19 14:49:16 2018 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+

@@ -1,0 +1,59 @@
+/laskarit/viikko2/JavaApplication4/nbproject/private/
+/laskarit/viikko2/Maksukortti/nbproject/private/
+/laskarit/viikko2/Maksukortti/build/
+/laskarit/viikko2/Unicafe/target/
+/laskarit/viikko2/Unicafe/nbproject/
+
+# vscode settings #
+.idea/
+
+# doxygen generated #
+/html/
+/latex/
+
+# =============== #
+# Unity generated #
+# =============== #
+[Tt]emp/
+[Oo]bj/
+[Bb]uild
+/[Bb]uilds/
+/[Ll]ibrary/
+sysinfo.txt
+*.stackdump
+/Assets/AssetStoreTools*
+*.apk
+*.unitypackage
+ 
+# ===================================== #
+# Visual Studio / MonoDevelop generated #
+# ===================================== #
+[Ee]xported[Oo]bj/
+.vs/
+.vscode/
+/*.userprefs
+/*.csproj
+/*.pidb
+*.pidb.meta
+/*.suo
+/*.sln*
+/*.user
+/*.unityproj
+/*.booproj
+.consulo/
+/*.tmp
+/*.svd
+ 
+# ============ #
+# OS generated #
+# ============ #
+.DS_Store*
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+[Tt]humbs.db
+[Dd]esktop.ini
+Corridor/Library/ShaderCache/
+Corridor/Library/metadata/
