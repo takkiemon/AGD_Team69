@@ -4,7 +4,7 @@ using UnityEngine;
 using PhantomGrammar.GrammarCore; // using the dll
 using System.IO;
 
-public class LevelGenerator : MonoBehaviour
+public class LevelGenerator_Example : MonoBehaviour
 {
     private GenerationSystem system; // ludoscope's generation system
 
