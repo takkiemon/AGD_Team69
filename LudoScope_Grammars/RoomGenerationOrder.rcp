@@ -1,0 +1,5 @@
+IterateRule("CreateEntrance")
+ExecuteRule("AddRoom", 16)
+ExecuteRule("DetermineRoomType")
+ExecuteRule("DetermineQuestSpace")
+IterateRule("EndRoomCreation")
