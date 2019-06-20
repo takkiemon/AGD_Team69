@@ -1,0 +1,7 @@
+ReplaceLabels("Hook", "void")
+ReplaceLabels("undefined", "void")
+ShrinkWrap("void")
+ExecuteRule("CreateCornerWalls", 250)
+ExecuteRule("CreateNormalWalls", 250)
+ExecuteRule("CreateCornerWallsFromMonster", 250)
+ExecuteRule("CreateNormalWallsFromMonster", 250)
