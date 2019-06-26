@@ -62,9 +62,12 @@ public class LudoLevelGenerator : MonoBehaviour
         switch (symbol.Label) // perform the right action for the found label
         {
             case "entrance":
-                Instantiate(entrance, position, Quaternion.identity);
-                //Instantiate(player, position, Quaternion.identity);
+                Instantiate(wall, position, Quaternion.identity);
+                //Instantiate(entrance, position, Quaternion.identity);
+                break;
+            case "player":
                 mainCam.Player.transform.position = position;
+                Instantiate(floor, position, Quaternion.identity);
                 break;
             case "entranceCalced":
                 Instantiate(floor, position, Quaternion.identity);
