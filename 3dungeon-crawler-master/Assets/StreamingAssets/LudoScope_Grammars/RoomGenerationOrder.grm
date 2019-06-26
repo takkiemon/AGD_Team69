@@ -2,6 +2,6 @@ version: 0.6f
 start: STRING 0:Start
 rule: CreateEntrance = STRING 0:Start > {0 = STRING 0:entrance 1:Start(x=-148, y=-210)}
 rule: AddRoom = STRING 0:Start > {0 = STRING 0:Room 3:Start(x=11, y=-214)}
-rule: DetermineRoomType = STRING 0:Room > {0(prob=8f) = STRING 1:room(x=-145, y=-211)} | {1(prob=2f) = STRING 0:longroom} | {2(prob=2f) = STRING 0:lshaperoom} | {3 = STRING 0:bigboyroom} | {4(max=1) = STRING 0:questArea}
+rule: DetermineRoomType = STRING 0:Room > {0(prob=8f) = STRING 1:room(x=-145, y=-211)} | {1(prob=2f) = STRING 0:longroom} | {2(prob=2f) = STRING 0:lshaperoom} | {3 = STRING 0:bigboyroom}
 rule: EndRoomCreation = STRING 0:Start > {0 = STRING 0:room(x=-97, y=-159)}
 rule: DetermineQuestSpace = STRING 0:questArea > {0 = STRING 0:questLeft} | {1 = STRING 0:questMiddle} | {2 = STRING 0:questRight}
