@@ -130,15 +130,15 @@ namespace GameObjectControllers
         /// <summary>
         /// LadderController calls this when the player steps into a ladder
         /// </summary>
-        public void LevelUp()
-        {
-            SetViewBlank();
-            _currentLevel++;
-            Destroy(_currentLevelObject);
-            GenerateLevel();
-            SetViewNormal();
-            Level.text = "Level: " + _currentLevel;
-        }
+        //public void LevelUp()
+        //{
+        //    SetViewBlank();
+        //    _currentLevel++;
+        //    Destroy(_currentLevelObject);
+        //    GenerateLevel();
+        //    SetViewNormal();
+        //    Level.text = "Level: " + _currentLevel;
+        //}
 
         private void GenerateLevel()
         {

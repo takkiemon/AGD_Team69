@@ -18,6 +18,9 @@ public class LudoGameMasterController : MonoBehaviour
     public GameObject PlayingUi;
     public GameObject PausedUi;
     public GameObject GameOverUi;
+
+    public LudoLevelGenerator gen;
+
     public Text GameOverLevel;
     public Text Level;
 
@@ -108,5 +111,16 @@ public class LudoGameMasterController : MonoBehaviour
         GameOverUi.SetActive(true);
         GameOverLevel.text = "Reached level " + _currentLevel + "!";
         _gameOver = true;
+    }
+
+    public void LevelUp()
+    {
+        SetViewBlank();
+        _currentLevel++;
+        GameObject level = GameObject.FindGameObjectWithTag("Level");
+        Destroy(level);
+        gen.Init();
+        SetViewNormal();
+        Level.text = "Level: " + _currentLevel;
     }
 }

@@ -593,6 +593,7 @@ MonoBehaviour:
   PlayingUi: {fileID: 710196011}
   PausedUi: {fileID: 31061279}
   GameOverUi: {fileID: 265130050}
+  gen: {fileID: 0}
   GameOverLevel: {fileID: 1335728076}
   Level: {fileID: 1647915664}
 --- !u!1 &710196011
@@ -749,6 +750,9 @@ MonoBehaviour:
   door: {fileID: 4196952784367342482, guid: ac57c86daaaf74d4381e88452ff232f7, type: 3}
   treasure: {fileID: 518724479971172628, guid: 56caa04bc800b124e9a801077726827d, type: 3}
   mainCam: {fileID: 282840812}
+  levelPrefab: {fileID: 2012514638450524261, guid: 36078d368abec0a42b66f8b6b578f728,
+    type: 3}
+  level: {fileID: 0}
 --- !u!4 &761010762
 Transform:
   m_ObjectHideFlags: 0
