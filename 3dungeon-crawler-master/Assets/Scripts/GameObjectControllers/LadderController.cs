@@ -13,13 +13,21 @@ namespace GameObjectControllers
         private void Start()
         {
             _gameController = GameObject.FindWithTag("GameController");
+            if (_gameController != null)
+            {
+                Debug.Log("yay");
+            }
+            else
+            {
+                Debug.Log("boo");
+            }
         }
 
         private void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.CompareTag("Player"))
             {
-                _gameController.GetComponent<GameMasterController>().LevelUp();
+                _gameController.GetComponent<LudoGameMasterController>().LevelUp();
             }
         }
     }

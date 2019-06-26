@@ -16,6 +16,7 @@ public class LudoLevelGenerator : MonoBehaviour
     public GameObject door;
     public GameObject treasure;
     public CameraController mainCam;
+    public GameObject levelParent;
 
     private Symbol container = null;
 
@@ -25,6 +26,8 @@ public class LudoLevelGenerator : MonoBehaviour
         // load ludoscope project
         string file = "LudoScope_Grammars/DungeonGenerator.lsp";
         string fullPath = System.IO.Path.Combine(Application.streamingAssetsPath, file);
+
+        levelParent = new GameObject();
 
         //ready the system with ludoscope project
         system = new GenerationSystem();
@@ -69,25 +72,25 @@ public class LudoLevelGenerator : MonoBehaviour
                 Instantiate(floor, (position - new Vector3(0, .5f, 0)), Quaternion.identity);
                 break;
             case "entranceCalced":
-                Instantiate(floor, (position - new Vector3(0, .5f, 0)), Quaternion.identity);
+                Instantiate(floor, (position - new Vector3(0, .5f, 0)), Quaternion.identity, levelParent.transform);
                 break;
             case "door":
-                Instantiate(door, (position - new Vector3(0, .5f, 0)), Quaternion.identity);
+                Instantiate(door, (position - new Vector3(0, .5f, 0)), Quaternion.identity, levelParent.transform);
                 break;
             case "wall":
-                Instantiate(wall, position, Quaternion.identity);
+                Instantiate(wall, position, Quaternion.identity, levelParent.transform);
                 break;
-            //case "enemy":
-            //    Instantiate(enemy, position, Quaternion.identity);
-            //    Instantiate(floor, (position - new Vector3(0, .5f, 0)), Quaternion.identity);
-            //    break;
+            case "enemy":
+                Instantiate(enemy, position, Quaternion.identity);
+                Instantiate(floor, (position - new Vector3(0, .5f, 0)), Quaternion.identity, levelParent.transform);
+                break;
             case "treasure":
-                Instantiate(treasure, position, Quaternion.identity);
-                Instantiate(floor, (position - new Vector3(0, .5f, 0)), Quaternion.identity);
+                Instantiate(treasure, position, Quaternion.identity, levelParent.transform);
+                Instantiate(floor, (position - new Vector3(0, .5f, 0)), Quaternion.identity, levelParent.transform);
                 break;
             case "exit":
                 Instantiate(exit, position, Quaternion.identity);
-                Instantiate(floor, (position - new Vector3(0, .5f, 0)), Quaternion.identity);
+                Instantiate(floor, (position - new Vector3(0, .5f, 0)), Quaternion.identity, levelParent.transform);
                 break;
            default:
                 break;

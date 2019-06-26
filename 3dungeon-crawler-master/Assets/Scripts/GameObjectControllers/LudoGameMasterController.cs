@@ -109,4 +109,11 @@ public class LudoGameMasterController : MonoBehaviour
         GameOverLevel.text = "Reached level " + _currentLevel + "!";
         _gameOver = true;
     }
+
+    public void LevelUp()
+    {
+        _currentLevel++;
+        GameObject levelParent = FindObjectOfType<LudoLevelGenerator>().levelParent;
+        Destroy(levelParent);
+    }
 }
