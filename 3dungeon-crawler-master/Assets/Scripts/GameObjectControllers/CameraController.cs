@@ -15,16 +15,24 @@ namespace GameObjectControllers
         
         private CameraMovementBehaviourController _movement;
 
+        private void Awake()
+        {
+            //Instantiate(Player, new Vector3(0, 0, 0), Quaternion.identity);
+        }
+
         private void Start()
         {
+            
             _movement = new CameraMovementBehaviourController(transform.position - Player.transform.position, 5.0f);
+            transform.position = Player.transform.position + _movement.Offset;
         }
 
         private void OnEnable()
         {
             // OnEnable gets called in the beginning and between levels
             // We force instant movement here in order to avoid an awkward looking transition
-            transform.position = Player.transform.position + _movement.Offset;
+            // transform.position = Player.transform.position + _movement.Offset;
+
         }
 
         private void LateUpdate()
