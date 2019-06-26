@@ -653,7 +653,7 @@ PrefabInstance:
     - target: {fileID: 4709751264986680894, guid: f37f428c42377764b84ee0bc5557461c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4709751264986680894, guid: f37f428c42377764b84ee0bc5557461c,
         type: 3}
@@ -700,6 +700,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4709751264986680893, guid: f37f428c42377764b84ee0bc5557461c,
+        type: 3}
+      propertyPath: Health
+      value: 
+      objectReference: {fileID: 1215707293}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f37f428c42377764b84ee0bc5557461c, type: 3}
 --- !u!1 &749567739 stripped
@@ -742,8 +747,8 @@ MonoBehaviour:
   enemy: {fileID: 1901949901222970, guid: 0e0c669eaf551497d9e7cf4139ba0421, type: 3}
   exit: {fileID: 1676924114184578, guid: 31d968dcb2bcd4d02ba803bb19ac39e5, type: 3}
   entrance: {fileID: 1676924114184578, guid: 31d968dcb2bcd4d02ba803bb19ac39e5, type: 3}
-  player: {fileID: 749567739}
   door: {fileID: 4196952784367342482, guid: ac57c86daaaf74d4381e88452ff232f7, type: 3}
+  mainCam: {fileID: 282840812}
 --- !u!4 &761010762
 Transform:
   m_ObjectHideFlags: 0

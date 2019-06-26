@@ -19,7 +19,7 @@ namespace GameObjectControllers
         {
             if (other.gameObject.CompareTag("Player"))
             {
-                _gameController.GetComponent<GameMasterController>().LevelUp();
+                //_gameController.GetComponent<GameMasterController>().LevelUp();
             }
         }
     }

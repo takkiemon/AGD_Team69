@@ -65,6 +65,7 @@ public class LudoLevelGenerator : MonoBehaviour
                 Instantiate(entrance, position, Quaternion.identity);
                 //Instantiate(player, position, Quaternion.identity);
                 mainCam.Player.transform.position = position;
+                //mainCam.transform.position = position;
                 break;
             case "entranceCalced":
                 Instantiate(floor, position, Quaternion.identity);
