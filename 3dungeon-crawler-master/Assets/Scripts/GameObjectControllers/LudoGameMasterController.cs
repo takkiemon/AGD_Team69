@@ -1,0 +1,112 @@
+﻿using GameObjectControllers;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
+public class LudoGameMasterController : MonoBehaviour
+{
+    private int _currentLevel;
+    private bool _gameOver;
+
+    public GameObject Player;
+    public GameObject MainCamera;
+    public GameObject BlankCamera;
+    public GameObject PausedTintPlane;
+    public GameObject PlayingUi;
+    public GameObject PausedUi;
+    public GameObject GameOverUi;
+    public Text GameOverLevel;
+    public Text Level;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        // Set scene to dark
+        RenderSettings.ambientMode = AmbientMode.Flat;
+        RenderSettings.ambientLight = Color.black;
+
+        // Generate the first level
+        SetViewBlank();
+        _currentLevel = 1;
+        _gameOver = false;
+
+        // Start the game
+        SetViewNormal();
+        Level.text = "Level: " + 1;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (_gameOver)
+        {
+            // Restart the game if game is over and r pressed
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
+            return;
+        }
+
+        // Check for pause
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            if (Time.timeScale.Equals(1.0f))
+            {
+                Pause();
+                return;
+            }
+            else
+            {
+                UnPause();
+            }
+        }
+
+        // Check for game over
+        if (Player.GetComponent<PlayerController>().Dead)
+        {
+            GameOver();
+        }
+    }
+
+    // For turning the screen black during level generation
+    private void SetViewBlank()
+    {
+        MainCamera.SetActive(false);
+        BlankCamera.SetActive(true);
+    }
+
+    private void SetViewNormal()
+    {
+        BlankCamera.SetActive(false);
+        MainCamera.SetActive(true);
+    }
+
+    private void Pause()
+    {
+        Time.timeScale = 0f;
+        PausedTintPlane.SetActive(true);
+        PlayingUi.SetActive(false);
+        PausedUi.SetActive(true);
+    }
+
+    private void UnPause()
+    {
+        PausedUi.SetActive(false);
+        PlayingUi.SetActive(true);
+        PausedTintPlane.SetActive(false);
+        Time.timeScale = 1.0f;
+    }
+
+    private void GameOver()
+    {
+        PausedTintPlane.SetActive(true);
+        PlayingUi.SetActive(false);
+        GameOverUi.SetActive(true);
+        GameOverLevel.text = "Reached level " + _currentLevel + "!";
+        _gameOver = true;
+    }
+}
