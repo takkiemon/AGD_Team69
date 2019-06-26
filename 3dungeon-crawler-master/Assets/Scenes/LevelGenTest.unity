@@ -228,7 +228,7 @@ MonoBehaviour:
   enemy: {fileID: 1901949901222970, guid: 0e0c669eaf551497d9e7cf4139ba0421, type: 3}
   exit: {fileID: 1676924114184578, guid: 31d968dcb2bcd4d02ba803bb19ac39e5, type: 3}
   entrance: {fileID: 1676924114184578, guid: 31d968dcb2bcd4d02ba803bb19ac39e5, type: 3}
-  player: {fileID: 0}
+  player: {fileID: 5238700727899622082, guid: 3eef0ba6623f3744c9f989f2834d0e3e, type: 3}
   door: {fileID: 4196952784367342482, guid: ac57c86daaaf74d4381e88452ff232f7, type: 3}
 --- !u!4 &761010762
 Transform:

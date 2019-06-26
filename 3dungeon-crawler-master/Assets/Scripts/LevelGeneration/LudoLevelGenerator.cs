@@ -59,26 +59,6 @@ public class LudoLevelGenerator : MonoBehaviour
     {
         switch (symbol.Label) // perform the right action for the found label
         {
-            //case "ground":
-            //    // fill ground tiles
-            //    Instantiate(ground, position, Quaternion.identity);
-            //    break;
-            //case "wall":
-            //    // fill wall tiles
-            //    Instantiate(wall, position, Quaternion.identity);
-            //    break;
-            //case "spike":
-            //    // fill spike tiles
-            //    Instantiate(spike, position, Quaternion.identity);
-            //    break;
-            //case "enemy":
-            //    // fill enemy tiles
-            //    Instantiate(enemy, position, Quaternion.identity);
-            //    break;
-            //case "pit":
-            //    // fill pit tiles
-            //    Instantiate(pit, position, Quaternion.identity);
-            //    break;
             case "entrance":
                 Instantiate(entrance, position, Quaternion.identity);
                 Instantiate(player, position, Quaternion.identity);
