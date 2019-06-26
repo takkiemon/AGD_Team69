@@ -13,9 +13,8 @@ public class LudoLevelGenerator : MonoBehaviour
     public GameObject floor;
     public GameObject enemy;
     public GameObject exit;
-    public GameObject entrance;
-    //public GameObject player;
     public GameObject door;
+    public GameObject treasure;
     public CameraController mainCam;
 
     private Symbol container = null;
@@ -67,19 +66,28 @@ public class LudoLevelGenerator : MonoBehaviour
                 break;
             case "player":
                 mainCam.Player.transform.position = position;
-                Instantiate(floor, position, Quaternion.identity);
+                Instantiate(floor, (position - new Vector3(0, .5f, 0)), Quaternion.identity);
                 break;
             case "entranceCalced":
-                Instantiate(floor, position, Quaternion.identity);
+                Instantiate(floor, (position - new Vector3(0, .5f, 0)), Quaternion.identity);
                 break;
             case "door":
-                Instantiate(door, position, Quaternion.identity);
+                Instantiate(door, (position - new Vector3(0, .5f, 0)), Quaternion.identity);
                 break;
             case "wall":
                 Instantiate(wall, position, Quaternion.identity);
                 break;
-            case "questArea":
-                Instantiate(floor, position, Quaternion.identity);
+            //case "enemy":
+            //    Instantiate(enemy, position, Quaternion.identity);
+            //    Instantiate(floor, (position - new Vector3(0, .5f, 0)), Quaternion.identity);
+            //    break;
+            case "treasure":
+                Instantiate(treasure, position, Quaternion.identity);
+                Instantiate(floor, (position - new Vector3(0, .5f, 0)), Quaternion.identity);
+                break;
+            case "exit":
+                Instantiate(exit, position, Quaternion.identity);
+                Instantiate(floor, (position - new Vector3(0, .5f, 0)), Quaternion.identity);
                 break;
            default:
                 break;
