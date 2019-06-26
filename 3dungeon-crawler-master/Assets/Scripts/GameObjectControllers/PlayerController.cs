@@ -13,6 +13,7 @@ namespace GameObjectControllers
         private const float SpeedOfMovement = 5.0f;
         private const float SpeedOfTurn = 0.15f;
         private HealthAndDyingBehaviourController _healthAndDying;
+        private int treasureCount = 0;
 
         /// <summary>
         /// Player's sword (set in inspector)
@@ -22,6 +23,10 @@ namespace GameObjectControllers
         /// Text object visualizing the amount of health left
         /// </summary>
         public Text Health;
+        /// <summary>
+        /// Text object visualizing the amount of health left
+        /// </summary>
+        public Text Treasure;
         /// <summary>
         /// Indicator for other GameObject whether player is dead or not
         /// </summary>
@@ -85,6 +90,16 @@ namespace GameObjectControllers
             Dead = true;
             ChangeColor(new Color(1f, 0.3f, 0.3f));
             Health.text = "Health: 0 :(";
+        }
+
+        public void OnCollisionEnter(Collision collision)
+        {
+            if (collision.transform.tag == "Treasure")
+            {
+                treasureCount++;
+                Treasure.text = "Treasures: " + treasureCount;
+                collision.transform.gameObject.SetActive(false);
+            }
         }
     }
 }
