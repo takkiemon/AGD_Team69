@@ -18,6 +18,7 @@ public class LudoGameMasterController : MonoBehaviour
     public GameObject PlayingUi;
     public GameObject PausedUi;
     public GameObject GameOverUi;
+    public LudoLevelGenerator ludoLevelGen;
     public Text GameOverLevel;
     public Text Level;
 
@@ -113,7 +114,16 @@ public class LudoGameMasterController : MonoBehaviour
     public void LevelUp()
     {
         _currentLevel++;
-        GameObject levelParent = FindObjectOfType<LudoLevelGenerator>().levelParent;
-        Destroy(levelParent);
+        if (ludoLevelGen == null)
+        {
+            ludoLevelGen = FindObjectOfType<LudoLevelGenerator>();
+            Debug.Log("test 001 ludocontroller");
+        }
+        Destroy(ludoLevelGen.levelParent);
+        ludoLevelGen.InitLudoLevelGen();
+        Debug.Log("test 002 ludocontroller");
+        
+        //DontDestroyOnLoad(Player);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

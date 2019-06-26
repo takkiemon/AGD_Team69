@@ -20,14 +20,22 @@ public class LudoLevelGenerator : MonoBehaviour
 
     private Symbol container = null;
 
+    string file, fullPath;
+
     // Start is called before the first frame update
     void Start()
     {
-        // load ludoscope project
-        string file = "LudoScope_Grammars/DungeonGenerator.lsp";
-        string fullPath = System.IO.Path.Combine(Application.streamingAssetsPath, file);
+        InitLudoLevelGen();
+    }
 
-        levelParent = new GameObject();
+    public void InitLudoLevelGen()
+    {
+        levelParent = new GameObject("levelParentObject");
+
+        Debug.Log("test 001 ludolvlGen");
+        // load ludoscope project
+        file = "LudoScope_Grammars/DungeonGenerator.lsp";
+        fullPath = System.IO.Path.Combine(Application.streamingAssetsPath, file);
 
         //ready the system with ludoscope project
         system = new GenerationSystem();
@@ -36,12 +44,14 @@ public class LudoLevelGenerator : MonoBehaviour
         Debug.Log("System " + file + " loaded");
 
         Build(Generate());
+        Debug.Log("test 002 ludolvlGen");
     }
 
     internal Expression Generate()
     {
         system.Reset();
         system.Execute();
+        Debug.Log("test 003 ludolvlGen");
 
         return system.Output; // return generated expression
     }
@@ -55,6 +65,7 @@ public class LudoLevelGenerator : MonoBehaviour
                 Symbol symbol = expression.Symbols[x + y * expression.Width]; // the symbol of the current tile
                 Vector3 position = new Vector3(x, 0, -y); // position of the current tile
                 BuildContainer(expression, symbol, position);
+                //Debug.Log("test 004 ludolvlGen, with symbol: " + symbol + ".");
             }
         }
     }
@@ -64,12 +75,12 @@ public class LudoLevelGenerator : MonoBehaviour
         switch (symbol.Label) // perform the right action for the found label
         {
             case "entrance":
-                Instantiate(wall, position, Quaternion.identity);
+                Instantiate(wall, position, Quaternion.identity, levelParent.transform);
                 //Instantiate(entrance, position, Quaternion.identity);
                 break;
             case "player":
                 mainCam.Player.transform.position = position;
-                Instantiate(floor, (position - new Vector3(0, .5f, 0)), Quaternion.identity);
+                Instantiate(floor, (position - new Vector3(0, .5f, 0)), Quaternion.identity, levelParent.transform);
                 break;
             case "entranceCalced":
                 Instantiate(floor, (position - new Vector3(0, .5f, 0)), Quaternion.identity, levelParent.transform);
@@ -81,7 +92,7 @@ public class LudoLevelGenerator : MonoBehaviour
                 Instantiate(wall, position, Quaternion.identity, levelParent.transform);
                 break;
             case "enemy":
-                Instantiate(enemy, position, Quaternion.identity);
+                Instantiate(enemy, position, Quaternion.identity, levelParent.transform);
                 Instantiate(floor, (position - new Vector3(0, .5f, 0)), Quaternion.identity, levelParent.transform);
                 break;
             case "treasure":
@@ -89,7 +100,7 @@ public class LudoLevelGenerator : MonoBehaviour
                 Instantiate(floor, (position - new Vector3(0, .5f, 0)), Quaternion.identity, levelParent.transform);
                 break;
             case "exit":
-                Instantiate(exit, position, Quaternion.identity);
+                Instantiate(exit, position, Quaternion.identity, levelParent.transform);
                 Instantiate(floor, (position - new Vector3(0, .5f, 0)), Quaternion.identity, levelParent.transform);
                 break;
            default:

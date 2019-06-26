@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1273174, g: 0.13414761, b: 0.12107885, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -593,6 +593,7 @@ MonoBehaviour:
   PlayingUi: {fileID: 710196011}
   PausedUi: {fileID: 31061279}
   GameOverUi: {fileID: 265130050}
+  ludoLevelGen: {fileID: 761010761}
   GameOverLevel: {fileID: 1335728076}
   Level: {fileID: 1647915664}
 --- !u!1 &710196011
@@ -756,6 +757,7 @@ MonoBehaviour:
   treasure: {fileID: 9139719672537993393, guid: a3b53f0a142e4804597557ce2eddd9fc,
     type: 3}
   mainCam: {fileID: 282840812}
+  levelParent: {fileID: 0}
 --- !u!4 &761010762
 Transform:
   m_ObjectHideFlags: 0

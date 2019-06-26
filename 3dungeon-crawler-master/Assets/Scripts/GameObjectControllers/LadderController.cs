@@ -13,14 +13,6 @@ namespace GameObjectControllers
         private void Start()
         {
             _gameController = GameObject.FindWithTag("GameController");
-            if (_gameController != null)
-            {
-                Debug.Log("yay");
-            }
-            else
-            {
-                Debug.Log("boo");
-            }
         }
 
         private void OnTriggerEnter(Collider other)
