@@ -117,8 +117,10 @@ public class LudoGameMasterController : MonoBehaviour
     {
         SetViewBlank();
         _currentLevel++;
-        GameObject level = GameObject.FindGameObjectWithTag("Level");
-        Destroy(level);
+        //TODO: Maak Player/GameMaster dontdestroyonload
+        //      Voer dit uit
+        //      SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
         gen.Init();
         SetViewNormal();
         Level.text = "Level: " + _currentLevel;

@@ -43,9 +43,14 @@ public class LudoLevelGenerator : MonoBehaviour
 
     public void Init()
     {
-        //level = Instantiate(levelPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+        string file = "LudoScope_Grammars/DungeonGenerator.lsp";
+        string fullPath = System.IO.Path.Combine(Application.streamingAssetsPath, file);
 
         system.Clear();
+
+        system = new GenerationSystem();
+        system.OpenFromFile(fullPath);
+
         Build(Generate());
     }
 
