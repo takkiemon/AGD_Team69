@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1273174, g: 0.13414761, b: 0.12107885, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731704, g: 0.13414727, b: 0.121078536, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -742,8 +742,8 @@ MonoBehaviour:
   enemy: {fileID: 1901949901222970, guid: 0e0c669eaf551497d9e7cf4139ba0421, type: 3}
   exit: {fileID: 1676924114184578, guid: 31d968dcb2bcd4d02ba803bb19ac39e5, type: 3}
   entrance: {fileID: 1676924114184578, guid: 31d968dcb2bcd4d02ba803bb19ac39e5, type: 3}
-  player: {fileID: 749567739}
   door: {fileID: 4196952784367342482, guid: ac57c86daaaf74d4381e88452ff232f7, type: 3}
+  mainCam: {fileID: 282840812}
 --- !u!4 &761010762
 Transform:
   m_ObjectHideFlags: 0
@@ -1511,7 +1511,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &1585882644
 MeshCollider:
   m_ObjectHideFlags: 0
