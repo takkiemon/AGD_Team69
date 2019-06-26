@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using PhantomGrammar.GrammarCore;
 using UnityEngine;
 using System.IO;
+using GameObjectControllers;
 
 public class LudoLevelGenerator : MonoBehaviour
 {
@@ -13,8 +14,9 @@ public class LudoLevelGenerator : MonoBehaviour
     public GameObject enemy;
     public GameObject exit;
     public GameObject entrance;
-    public GameObject player;
+    //public GameObject player;
     public GameObject door;
+    public CameraController mainCam;
 
     private Symbol container = null;
 
@@ -61,7 +63,8 @@ public class LudoLevelGenerator : MonoBehaviour
         {
             case "entrance":
                 Instantiate(entrance, position, Quaternion.identity);
-                Instantiate(player, position, Quaternion.identity);
+                //Instantiate(player, position, Quaternion.identity);
+                mainCam.Player.transform.position = position;
                 break;
             case "entranceCalced":
                 Instantiate(floor, position, Quaternion.identity);
