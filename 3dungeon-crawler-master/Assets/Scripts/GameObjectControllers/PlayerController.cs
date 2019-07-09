@@ -14,6 +14,7 @@ namespace GameObjectControllers
         private const float SpeedOfTurn = 0.15f;
         private HealthAndDyingBehaviourController _healthAndDying;
         private int treasureCount = 0;
+        public bool key;
 
         /// <summary>
         /// Player's sword (set in inspector)
@@ -37,6 +38,7 @@ namespace GameObjectControllers
             _healthAndDying =
                 new HealthAndDyingBehaviourController(this, new Color(1f, 1f, 1f), new Color(1f, 0.7f, 0.7f), 100, 1f);
             Dead = false;
+            key = false;
         }
 
         private void Update()
@@ -94,11 +96,21 @@ namespace GameObjectControllers
 
         public void OnCollisionEnter(Collision collision)
         {
+            Debug.Log(collision.transform.tag);
             if (collision.transform.tag == "Treasure")
             {
                 treasureCount++;
                 Treasure.text = "Treasures: " + treasureCount;
                 collision.transform.gameObject.SetActive(false);
+            }
+        }
+
+        public void OnTriggerEnter(Collider other)
+        {
+            if (other.transform.tag == "Key")
+            {
+                key = true;
+                other.transform.gameObject.SetActive(false);
             }
         }
     }
