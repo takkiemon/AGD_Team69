@@ -756,6 +756,9 @@ MonoBehaviour:
   door: {fileID: 4196952784367342482, guid: ac57c86daaaf74d4381e88452ff232f7, type: 3}
   treasure: {fileID: 9139719672537993393, guid: a3b53f0a142e4804597557ce2eddd9fc,
     type: 3}
+  key: {fileID: 8095075643472831909, guid: 85ea00a636e1d9042a7a9ebf3240476c, type: 3}
+  lockDoor: {fileID: 8524695927157909588, guid: 1c17ed0f1cda46e43bc848b8c48c04af,
+    type: 3}
   mainCam: {fileID: 282840812}
   levelParent: {fileID: 0}
 --- !u!4 &761010762

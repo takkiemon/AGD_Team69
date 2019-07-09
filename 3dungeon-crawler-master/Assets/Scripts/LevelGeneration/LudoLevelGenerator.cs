@@ -15,6 +15,8 @@ public class LudoLevelGenerator : MonoBehaviour
     public GameObject exit;
     public GameObject door;
     public GameObject treasure;
+    public GameObject key;
+    public GameObject lockDoor;
     public CameraController mainCam;
     public GameObject levelParent;
 
@@ -31,8 +33,7 @@ public class LudoLevelGenerator : MonoBehaviour
     public void InitLudoLevelGen()
     {
         levelParent = new GameObject("levelParentObject");
-
-        Debug.Log("test 001 ludolvlGen");
+        
         // load ludoscope project
         file = "LudoScope_Grammars/DungeonGenerator.lsp";
         fullPath = System.IO.Path.Combine(Application.streamingAssetsPath, file);
@@ -44,7 +45,6 @@ public class LudoLevelGenerator : MonoBehaviour
         Debug.Log("System " + file + " loaded");
 
         Build(Generate());
-        Debug.Log("test 002 ludolvlGen");
     }
 
     internal Expression Generate()
