@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731704, g: 0.13414727, b: 0.121078536, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -366,7 +366,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 282840810}
   m_LocalRotation: {x: 0.45543617, y: -0.16372949, z: 0.08562372, w: 0.8708842}
-  m_LocalPosition: {x: 0.67, y: 7.53, z: -6.36}
+  m_LocalPosition: {x: 0.72, y: 3.52, z: -1.81}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 783989194}
@@ -1013,7 +1013,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Creator: Sofia Vanhanen'
+  m_Text: 'Creator: Sofia Vanhanen (Tak man, Durin en Stefan)'
 --- !u!222 &1089145055
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1827,7 +1827,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Creator: Sofia Vanhanen'
+  m_Text: 'Creator: Sofia Vanhanen (Tak man, Durin en Stefan)'
 --- !u!222 &1997974324
 CanvasRenderer:
   m_ObjectHideFlags: 0

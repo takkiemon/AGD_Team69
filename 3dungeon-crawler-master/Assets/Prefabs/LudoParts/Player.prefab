@@ -170,6 +170,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Sword: {fileID: 5238700726292112355}
   Health: {fileID: 0}
+  Treasure: {fileID: 0}
   Dead: 0
 --- !u!1 &5238700728026171846
 GameObject:
@@ -293,7 +294,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 43443e735f91441dfa2156679c78fd08, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 43443e735f91441dfa2156679c78fd08, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
