@@ -19,11 +19,7 @@ namespace GameObjectControllers
         {
             if (other.gameObject.CompareTag("Player"))
             {
-                if (other.gameObject.GetComponent<PlayerController>().key == true)
-                {
-                    other.gameObject.GetComponent<PlayerController>().key = false;
-                    _gameController.GetComponent<LudoGameMasterController>().LevelUp();
-                }
+                _gameController.GetComponent<LudoGameMasterController>().LevelUp();
             }
         }
     }

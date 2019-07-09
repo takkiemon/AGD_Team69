@@ -103,6 +103,11 @@ namespace GameObjectControllers
                 Treasure.text = "Treasures: " + treasureCount;
                 collision.transform.gameObject.SetActive(false);
             }
+
+            if (key == true && collision.transform.tag == "Lock")
+            {
+                collision.transform.gameObject.SetActive(false);
+            }
         }
 
         public void OnTriggerEnter(Collider other)
