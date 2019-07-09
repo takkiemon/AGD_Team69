@@ -9,7 +9,7 @@ namespace GameObjectControllers
     /// </summary>
     public class GhostController : MonoBehaviour, IObjectWithHealth, IEnemyFollowing
     {
-        private const int Damage = 25;
+        private const int Damage = 20;
 
         private HealthAndDyingBehaviourController _healthAndDying;
         private EnemyMovementBehaviourController _movement;
@@ -24,7 +24,7 @@ namespace GameObjectControllers
         {
             _healthAndDying = new HealthAndDyingBehaviourController(this, new Color(1f, 1f, 1f, 0.5f),
                 new Color(1f, 0.8f, 0.8f, 0.5f), 40, 0.3f);
-            _movement = new EnemyMovementBehaviourController(this, 5, 1.0f, 0.15f);
+            _movement = new EnemyMovementBehaviourController(this, 3, 1.0f, 0.15f);
             _attacking = new EnemyAttackBehaviourController(1f);
             Player = GameObject.FindWithTag("Player");
         }
