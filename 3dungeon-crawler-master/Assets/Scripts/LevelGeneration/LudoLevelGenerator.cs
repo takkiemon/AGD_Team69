@@ -51,7 +51,6 @@ public class LudoLevelGenerator : MonoBehaviour
     {
         system.Reset();
         system.Execute();
-        Debug.Log("test 003 ludolvlGen");
 
         return system.Output; // return generated expression
     }
@@ -65,7 +64,6 @@ public class LudoLevelGenerator : MonoBehaviour
                 Symbol symbol = expression.Symbols[x + y * expression.Width]; // the symbol of the current tile
                 Vector3 position = new Vector3(x, 0, -y); // position of the current tile
                 BuildContainer(expression, symbol, position);
-                //Debug.Log("test 004 ludolvlGen, with symbol: " + symbol + ".");
             }
         }
     }
