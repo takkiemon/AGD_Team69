@@ -78,10 +78,10 @@ public class LudoLevelGenerator : MonoBehaviour
                 break;
             case "player":
                 mainCam.Player.transform.position = position;
-                Instantiate(floor, (position - new Vector3(0, .5f, 0)), Quaternion.identity, levelParent.transform);
+                //Instantiate(floor, (position - new Vector3(0, .5f, 0)), Quaternion.identity, levelParent.transform);
                 break;
             case "entranceCalced":
-                Instantiate(floor, (position - new Vector3(0, .5f, 0)), Quaternion.identity, levelParent.transform);
+                //Instantiate(floor, (position - new Vector3(0, .5f, 0)), Quaternion.identity, levelParent.transform);
                 break;
             case "door":
                 Instantiate(door, (position - new Vector3(0, .5f, 0)), Quaternion.identity, levelParent.transform);
@@ -91,15 +91,15 @@ public class LudoLevelGenerator : MonoBehaviour
                 break;
             case "enemy":
                 Instantiate(enemy, position, Quaternion.identity, levelParent.transform);
-                Instantiate(floor, (position - new Vector3(0, .5f, 0)), Quaternion.identity, levelParent.transform);
+                //Instantiate(floor, (position - new Vector3(0, .5f, 0)), Quaternion.identity, levelParent.transform);
                 break;
             case "treasure":
                 Instantiate(treasure, position, Quaternion.identity, levelParent.transform);
-                Instantiate(floor, (position - new Vector3(0, .5f, 0)), Quaternion.identity, levelParent.transform);
+                //Instantiate(floor, (position - new Vector3(0, .5f, 0)), Quaternion.identity, levelParent.transform);
                 break;
             case "exit":
                 Instantiate(exit, position, Quaternion.identity, levelParent.transform);
-                Instantiate(floor, (position - new Vector3(0, .5f, 0)), Quaternion.identity, levelParent.transform);
+                //Instantiate(floor, (position - new Vector3(0, .5f, 0)), Quaternion.identity, levelParent.transform);
                 break;
            default:
                 break;
