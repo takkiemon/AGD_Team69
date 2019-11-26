@@ -5,10 +5,11 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Analytics;
 
 public class LudoGameMasterController : MonoBehaviour
 {
-    private int _currentLevel;
+    public int _currentLevel;
     private bool _gameOver;
 
     public GameObject Player;
@@ -25,6 +26,7 @@ public class LudoGameMasterController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        AnalyticsEvent.GameStart();
         // Set scene to dark
         RenderSettings.ambientMode = AmbientMode.Flat;
         RenderSettings.ambientLight = Color.black;
@@ -69,6 +71,7 @@ public class LudoGameMasterController : MonoBehaviour
         // Check for game over
         if (Player.GetComponent<PlayerController>().Dead)
         {
+            AnalyticsEvent.LevelFail("level_" + _currentLevel);
             GameOver();
         }
     }
@@ -113,6 +116,7 @@ public class LudoGameMasterController : MonoBehaviour
 
     public void LevelUp()
     {
+        AnalyticsEvent.LevelComplete("level_" + _currentLevel);
         _currentLevel++;
         if (ludoLevelGen == null)
         {

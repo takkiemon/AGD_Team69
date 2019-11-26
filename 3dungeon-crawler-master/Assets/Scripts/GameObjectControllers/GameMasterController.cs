@@ -133,7 +133,7 @@ namespace GameObjectControllers
         public void LevelUp()
         {
             SetViewBlank();
-            _currentLevel++;
+            //_currentLevel++;
             Destroy(_currentLevelObject);
             GenerateLevel();
             SetViewNormal();

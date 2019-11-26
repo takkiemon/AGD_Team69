@@ -1,6 +1,8 @@
 ﻿using BehaviourControllers;
 using Interfaces;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Analytics;
 using UnityEngine.UI;
 
 namespace GameObjectControllers
@@ -15,6 +17,8 @@ namespace GameObjectControllers
         private HealthAndDyingBehaviourController _healthAndDying;
         private int treasureCount = 0;
         public bool key;
+
+        private GameObject _gameController;
 
         /// <summary>
         /// Player's sword (set in inspector)
@@ -35,6 +39,7 @@ namespace GameObjectControllers
 
         private void Start()
         {
+            _gameController = GameObject.FindGameObjectWithTag("GameController");
             _healthAndDying =
                 new HealthAndDyingBehaviourController(this, new Color(1f, 1f, 1f), new Color(1f, 0.7f, 0.7f), 100, 1f);
             Dead = false;
@@ -100,6 +105,13 @@ namespace GameObjectControllers
             if (collision.transform.tag == "Treasure")
             {
                 treasureCount++;
+
+                Analytics.CustomEvent("treasureCounter", new Dictionary<string, object>
+                {
+                    { "treasure", treasureCount },
+                    { "level_", _gameController.GetComponent<LudoGameMasterController>()._currentLevel }
+                });
+
                 Treasure.text = "Treasures: " + treasureCount;
                 collision.transform.gameObject.SetActive(false);
             }
