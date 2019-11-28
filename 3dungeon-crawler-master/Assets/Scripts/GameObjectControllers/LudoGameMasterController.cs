@@ -6,12 +6,15 @@ using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.Analytics;
+using System.Diagnostics;
+using System.Threading;
+using System;
 
 public class LudoGameMasterController : MonoBehaviour
 {
     public int _currentLevel;
     private bool _gameOver;
-
+    
     public GameObject Player;
     public GameObject MainCamera;
     public GameObject BlankCamera;
@@ -22,11 +25,16 @@ public class LudoGameMasterController : MonoBehaviour
     public LudoLevelGenerator ludoLevelGen;
     public Text GameOverLevel;
     public Text Level;
-
+    private GameObject _gameController;
+    Stopwatch stopWatch = new Stopwatch();
+    private bool isDead = true;
     // Start is called before the first frame update
     void Start()
     {
         AnalyticsEvent.GameStart();
+
+        _gameController = GameObject.FindWithTag("GameController");
+        stopWatch.Start();
         // Set scene to dark
         RenderSettings.ambientMode = AmbientMode.Flat;
         RenderSettings.ambientLight = Color.black;
@@ -46,6 +54,16 @@ public class LudoGameMasterController : MonoBehaviour
     {
         if (_gameOver)
         {
+            if (isDead)
+            {
+                Analytics.CustomEvent("Death_timer", new Dictionary<string, object>
+                {
+                    { "Time_untill_death", AnalyticsSessionInfo.sessionElapsedTime},
+                    { "level_", _gameController.GetComponent<LudoGameMasterController>()._currentLevel }
+                });
+                isDead = false;
+            }
+
             // Restart the game if game is over and r pressed
             if (Input.GetKeyDown(KeyCode.R))
             {
@@ -117,17 +135,40 @@ public class LudoGameMasterController : MonoBehaviour
     public void LevelUp()
     {
         AnalyticsEvent.LevelComplete("level_" + _currentLevel);
+
+
+
+        Timer();
         _currentLevel++;
         if (ludoLevelGen == null)
         {
             ludoLevelGen = FindObjectOfType<LudoLevelGenerator>();
-            Debug.Log("test 001 ludocontroller");
+            //Debug.Log("test 001 ludocontroller");
         }
         Destroy(ludoLevelGen.levelParent);
         ludoLevelGen.InitLudoLevelGen();
-        Debug.Log("test 002 ludocontroller");
+
         
-        //DontDestroyOnLoad(Player);
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+    }
+
+    public void Timer()
+    {
+        stopWatch.Stop();
+
+        TimeSpan ts = stopWatch.Elapsed;
+
+        string elapsedTime = string.Format("{0:00}.{1:00}.{2:00}.{3:00}", ts.Hours, ts.Minutes, ts.Seconds, ts.Milliseconds / 10);
+
+        Analytics.CustomEvent("level_timer", new Dictionary<string, object>
+        {
+                  { "Time_level_complete: ", elapsedTime},
+                  { "level_", _gameController.GetComponent<LudoGameMasterController>()._currentLevel }
+        });
+
+        stopWatch.Reset();
+        stopWatch.Start();
+
+        
     }
 }

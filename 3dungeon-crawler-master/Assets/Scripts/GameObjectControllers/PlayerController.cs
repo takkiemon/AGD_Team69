@@ -17,6 +17,7 @@ namespace GameObjectControllers
         private HealthAndDyingBehaviourController _healthAndDying;
         private int treasureCount = 0;
         public bool key;
+        private int _gotHit = 0;
 
         private GameObject _gameController;
 
@@ -82,7 +83,16 @@ namespace GameObjectControllers
         /// <param name="damage">Amount of damage dealt</param>
         public void GetHit(int damage)
         {
-            _healthAndDying.GetHit(damage, false);
+            if (_healthAndDying.GetHit(damage, false))
+            {
+                _gotHit++;
+
+                Analytics.CustomEvent("hit_counter", new Dictionary<string, object>
+            {
+                  { "Times_hit: ", _gotHit},
+                  { "level_", _gameController.GetComponent<LudoGameMasterController>()._currentLevel }
+            });
+            }
         }
 
         /// <inheritdoc />

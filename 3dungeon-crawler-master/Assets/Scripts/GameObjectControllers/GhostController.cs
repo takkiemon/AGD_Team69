@@ -1,6 +1,9 @@
 ﻿using BehaviourControllers;
 using Interfaces;
 using UnityEngine;
+using UnityEngine.Analytics;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace GameObjectControllers
 {
@@ -10,6 +13,7 @@ namespace GameObjectControllers
     public class GhostController : MonoBehaviour, IObjectWithHealth, IEnemyFollowing
     {
         private const int Damage = 20;
+        private GameObject _gameController;
 
         private HealthAndDyingBehaviourController _healthAndDying;
         private EnemyMovementBehaviourController _movement;
@@ -22,6 +26,7 @@ namespace GameObjectControllers
 
         private void Start()
         {
+            _gameController = GameObject.FindWithTag("GameController");
             _healthAndDying = new HealthAndDyingBehaviourController(this, new Color(1f, 1f, 1f, 0.5f),
                 new Color(1f, 0.8f, 0.8f, 0.5f), 40, 0.3f);
             _movement = new EnemyMovementBehaviourController(this, 3, 1.0f, 0.15f);
@@ -44,7 +49,7 @@ namespace GameObjectControllers
                 Player.GetComponent<PlayerController>().GetHit(Damage);
             }
         }
-        
+
         // Health and dying
 
         /// <summary>
@@ -65,9 +70,14 @@ namespace GameObjectControllers
         /// <inheritdoc />
         public void Die()
         {
+            Analytics.CustomEvent("Enemies_killed", new Dictionary<string, object>
+            {
+                 { "level_", _gameController.GetComponent<LudoGameMasterController>()._currentLevel }
+            });
+
             Destroy(gameObject);
         }
-        
+
         // Movement
 
         /// <inheritdoc />
